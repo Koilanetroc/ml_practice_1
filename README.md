@@ -9,6 +9,6 @@ Linear regression with multiple variables(algorithm can work with any number of 
 #### Both algorithms use gradient descent for learning
 
 # How to run?
-It's quite easy:
-```python one_variable.py```
-```python multiple_varibales.py```
+It's quite easy:   
+```python one_variable.py```   
+```python multiple_varibales.py```   
