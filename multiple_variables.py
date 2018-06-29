@@ -13,6 +13,7 @@ avg_rooms = data['rooms'].mean()
 for row in data.values:
     row[0] = (row[0] - avg_feet) / max_feet
     row[1] = (row[1] - avg_rooms) / max_rooms
+print('Normalized data:')
 print(data)
 
 # suppose that every row has format x1,x2,x3,x4,...,xn,y
@@ -33,10 +34,11 @@ def cost_function(data):
     return (1/len(data.values) * 2) * sum([(h(row[:-1]) - row[-1])**2 for row in data.values])
 
 cost = cost_function(data)
-print('Cost function = %s' % cost)
+print('First cost function = %s' % cost)
 
+# learning by gradient descent
+print('Start learning...')
 for k in range(1500):
-    print('=============================')
     new_thetas = [0] * total_variables
     for j in range(len(thetas)):
         # bias node
@@ -47,10 +49,14 @@ for k in range(1500):
         new_thetas[j] = thetas[j] - alfa * (1/len(data.values)) * sum(errors)
     thetas = new_thetas
     cost = cost_function(data)
-    print('New cost = %s' % cost)
-print('Thetas: %s' % thetas)
+    # print('=============================')
+    # print('New cost = %s' % cost)
 
-print('Check results:')
+print('Finished learning!')
+print('New cost function = %s' % cost_function(data))
+print('Calculated parameters: %s' % thetas)
+
+print('Check results on the trainig set:')
 for row in data.values:
     predicted = h(row[:-1])
     print('=============================')

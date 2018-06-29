@@ -32,12 +32,13 @@ while difference > 10**(-15):
     new_cost = cost_function(data.values)
     difference = cost - new_cost
     cost = new_cost
-    print(cost)
+    print('New cost = %s' % cost)
 
 print('Finished learning')
-print(theta0,theta1)
+print('Thetas %s' % [theta0,theta1])
 
 # test on training data(know that's bad)
+print('Check result on the training set:')
 for row in data.values:
     print('========================')
     predicted = h(row[0],theta0,theta1)
