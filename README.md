@@ -11,4 +11,4 @@ Linear regression with multiple variables(algorithm can work with any number of 
 # How to run?
 It's quite easy:   
 ```python one_variable.py```   
-```python multiple_varibales.py```   
+```python multiple_variables.py```   
